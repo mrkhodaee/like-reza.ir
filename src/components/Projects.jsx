@@ -1,8 +1,8 @@
 import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+// import { gsap } from "gsap";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
+// gsap.registerPlugin(ScrollTrigger);
 
 const projects = [
   {
@@ -34,26 +34,26 @@ const projects = [
 const ProjectCard = ({ project, index }) => {
   const cardRef = useRef(null);
 
-  useEffect(() => {
-    const el = cardRef.current;
-    if (!el) return;
+  // useEffect(() => {
+  //   const el = cardRef.current;
+  //   if (!el) return;
 
-    gsap.fromTo(
-      el,
-      { opacity: 0, y: 60 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: el,
-          start: "top 85%",
-          once: true,
-        },
-      }
-    );
-  }, []);
+  //   gsap.fromTo(
+  //     el,
+  //     { opacity: 0, y: 60 },
+  //     {
+  //       opacity: 1,
+  //       y: 0,
+  //       duration: 1,
+  //       ease: "power3.out",
+  //       scrollTrigger: {
+  //         trigger: el,
+  //         start: "top 85%",
+  //         once: true,
+  //       },
+  //     }
+  //   );
+  // }, []);
 
   return (
     <div ref={cardRef} className="project-card" style={{ "--accent": project.color }}>

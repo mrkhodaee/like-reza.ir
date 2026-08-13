@@ -1,55 +1,55 @@
 import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+// import { gsap } from "gsap";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
+// gsap.registerPlugin(ScrollTrigger);
 
 const Contact = () => {
   const sectionRef = useRef(null);
   const formRef = useRef(null);
   const infoRef = useRef(null);
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      if (formRef.current) {
-        gsap.fromTo(
-          formRef.current,
-          { opacity: 0, x: -50 },
-          {
-            opacity: 1,
-            x: 0,
-            duration: 1,
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: formRef.current,
-              start: "top 80%",
-              once: true,
-            },
-          }
-        );
-      }
-      if (infoRef.current) {
-        gsap.fromTo(
-          infoRef.current.children,
-          { opacity: 0, y: 30 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.6,
-            stagger: 0.12,
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: infoRef.current,
-              start: "top 80%",
-              once: true,
-            },
-          }
-        );
-      }
-    }, sectionRef);
+  // useEffect(() => {
+  //   const ctx = gsap.context(() => {
+  //     if (formRef.current) {
+  //       gsap.fromTo(
+  //         formRef.current,
+  //         { opacity: 0, x: -50 },
+  //         {
+  //           opacity: 1,
+  //           x: 0,
+  //           duration: 1,
+  //           ease: "power3.out",
+  //           scrollTrigger: {
+  //             trigger: formRef.current,
+  //             start: "top 80%",
+  //             once: true,
+  //           },
+  //         }
+  //       );
+  //     }
+  //     if (infoRef.current) {
+  //       gsap.fromTo(
+  //         infoRef.current.children,
+  //         { opacity: 0, y: 30 },
+  //         {
+  //           opacity: 1,
+  //           y: 0,
+  //           duration: 0.6,
+  //           stagger: 0.12,
+  //           ease: "power3.out",
+  //           scrollTrigger: {
+  //             trigger: infoRef.current,
+  //             start: "top 80%",
+  //             once: true,
+  //           },
+  //         }
+  //       );
+  //     }
+  //   }, sectionRef);
 
-    return () => ctx.revert();
-  }, []);
+  //   return () => ctx.revert();
+  // }, []);
 
   const contactItems = [
     {

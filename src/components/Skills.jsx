@@ -1,8 +1,8 @@
 import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+// import { gsap } from "gsap";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
+// gsap.registerPlugin(ScrollTrigger);
 
 const skillCategories = [
   {
@@ -40,25 +40,25 @@ const skillCategories = [
 const SkillBar = ({ name, level, index }) => {
   const barRef = useRef(null);
 
-  useEffect(() => {
-    const bar = barRef.current;
-    if (!bar) return;
+  // useEffect(() => {
+  //   const bar = barRef.current;
+  //   if (!bar) return;
 
-    gsap.fromTo(
-      bar,
-      { width: "0%" },
-      {
-        width: `${level}%`,
-        duration: 1.5,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: bar,
-          start: "top 85%",
-          once: true,
-        },
-      }
-    );
-  }, [level]);
+  //   gsap.fromTo(
+  //     bar,
+  //     { width: "0%" },
+  //     {
+  //       width: `${level}%`,
+  //       duration: 1.5,
+  //       ease: "power3.out",
+  //       scrollTrigger: {
+  //         trigger: bar,
+  //         start: "top 85%",
+  //         once: true,
+  //       },
+  //     }
+  //   );
+  // }, [level]);
 
   return (
     <div className="skill-bar-item">
